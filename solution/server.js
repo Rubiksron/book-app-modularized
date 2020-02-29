@@ -32,45 +32,21 @@ const getBook = require('./lib/getBook');
 const createBook = require('./lib/createBook');
 const updateBook = require('./lib/updateBook');
 const deleteBook = require('./lib/deleteBook');
+const elsewhereHandler = require('./lib/elsewhereHandler');
 
 // API Routes
-app.get('/', (request, response) => {
-  getBooks(request, response);
-});
-app.post('/searches', (request, response) => {
-  createSearch(request, response);
-});
-app.get('/searches/new', (request, response) => {
-  newSearch(request, response);
-});
-app.get('/books/get/:id', (request, response) => {
-  getBook(request, response);
-});
-app.post('/books', (request, response) => {
-  createBook(request, response);
-});
-app.put('/books/:id', (request, response) => {
-  updateBook(request, response);
-});
-app.delete('/books/:id', (request, response) => {
-  deleteBook(request, response);
-});
-app.get('/elsewhere', elsewhereHandler);
+app.get('/', (request, response) => getBooks(request, response));
+app.post('/searches', (request, response) => createSearch(request, response));
+app.get('/searches/new', (request, response) => newSearch(request, response));
+app.get('/books/get/:id', (request, response) => getBook(request, response));
+app.post('/books', (request, response) => createBook(request, response));
+app.put('/books/:id', (request, response) => updateBook(request, response));
+app.delete('/books/:id', (request, response) => deleteBook(request, response));
+app.get('/elsewhere', (request, response) => elsewhereHandler(request, response));
 
 // Failsafe Routes
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 app.get((error, req, res) => handleError(error, res)); // handle errors
-
-
-//being passed into elsewhere.ejs as data through the elsewhereHandler below
-const numArr = ['one', 'two', 'three', 'four'];
-
-//example route
-function elsewhereHandler(request, response) {
-  console.log('inside the elsewhere handler');
-  response.render('pages/searches/elsewhere', { data: numArr });
-} 
-
 
 client.connect()
   .then(() => {

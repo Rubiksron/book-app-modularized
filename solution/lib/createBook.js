@@ -13,6 +13,7 @@ function createBook(request, response) {
 
   client.query(SQL, values)
     .then(result => response.redirect(`/books/get/${result.rows[0].id}`))
+    .then(() => console.log('Made A New Book!!'))
     .catch(err => handleError(err, response));
 }
 

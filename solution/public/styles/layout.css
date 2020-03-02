@@ -82,7 +82,13 @@ textarea:focus {
 #delete-button:hover {
   background-color: red;
   color: white;
-  transition: .5s;
+  transition: .25s;
+}
+
+#update-button:hover {
+  background-color: black;
+  color: white;
+  transition: .25s;
 }
 
 button {
@@ -91,6 +97,7 @@ button {
   margin: 0 auto;
   padding: 2vw;
   width: 40%;
+  box-shadow: 1px 1px 5px #444;
 }
 
 button[type="submit"] {

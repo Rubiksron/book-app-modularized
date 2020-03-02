@@ -24,7 +24,7 @@ h3, p {
 }
 
 main > p {
-  text-align: inherit;
+  text-align: center;
 }
 
 span {
@@ -92,6 +92,7 @@ span {
 }
 
 .book-container.detail-view {
+  box-shadow: 1px 1px 5px #444;
   background: silver;
   padding-top: 5vw;
   border-radius: 3px;
@@ -109,6 +110,7 @@ span {
 .book-container.detail-view .isbn {
   color: #888;
   font-style: italic;
+  margin-bottom: 2rem;
 }
 
 .book-container.detail-view .desc {
@@ -132,6 +134,7 @@ span {
 }
 
 .detail-button a {
+  box-shadow: 2px 2px 5px #444;
   padding: 2vw 10vw;
   font-size: 3.5vw;
   background: #000;

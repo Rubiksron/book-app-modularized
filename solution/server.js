@@ -17,7 +17,7 @@ const client = require('./lib/client');
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
-// Set the view engine for server-side templating
+// Set the view engine for server-side templating, looks for 'views' folder
 app.set('view engine', 'ejs');
 
 // Static Routes

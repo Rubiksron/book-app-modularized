@@ -8,7 +8,8 @@ function getBooks(request, response) {
 
   return client.query(SQL)
     .then(results => {
-      console.log('getBooks function!!!!')
+      console.log('got all books!')
+      // console.log('DB results.rows: ', results.rows)
       if (results.rows.rowCount === 0) {
         response.render('pages/searches/new');
       } else {

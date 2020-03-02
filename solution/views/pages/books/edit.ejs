@@ -5,8 +5,7 @@
   <input type="text" name="image_url" value="<%= book.image_url %>">
   <textarea name="description" cols="30" rows="5"><%= book.description %></textarea>
 
-  <input type="text" value="<%= book.bookshelf %>" placeholder="Choose/Create a Bookshelf" name="bookshelf"
-    list="bookshelves" />
+  <input type="text" value="<%= book.bookshelf %>" placeholder="Choose/Create a Bookshelf" name="bookshelf" list="bookshelves" />
 
   <datalist id="bookshelves">
     <% bookshelves.forEach(shelf => { %>

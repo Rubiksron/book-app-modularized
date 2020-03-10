@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../layout/head') %>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Welcome to Elsewhere.ejs</h2>
+    <a href="/"><h3>Home Page</h3></a>
+    <ul>
+  <% data.forEach(index => { %>
+      <li class="index"><%= index %></li>
+  <% }) %>
+  </ul>
+  </body>
+</html>
